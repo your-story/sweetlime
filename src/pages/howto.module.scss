@@ -1,0 +1,55 @@
+.header {
+    padding: 0 0 0rem;
+}
+
+
+.title{
+    width:100%;
+    display: table;
+
+}
+.central {
+    width:400px;
+    background-color:white;
+    display: table-cell;
+}
+.left {        
+    position: relative;
+    top: 10px;
+    background-color:white;
+}
+.right {
+    position: relative;
+    top: -20px;
+    display: table-cell;
+    background-color:white;
+}
+.titleHead{
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+.nav-list{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+
+.nav-item {
+    color:darkolivegreen;
+    text-decoration: none;
+    margin-right: 1.3rem;
+    font-size: .9rem;
+    text-transform: capitalize;
+}
+
+.nav-item:hover{
+    color:#666666
+}
+
+.active-nav-item{
+    color: #333333
+}
