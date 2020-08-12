@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
+require("dotenv").config();
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -22,9 +22,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: "rahul-guha",
-        protocol: "https",
-        hostname: "www.rahul-guha.com",
+        bucketName: "fix-pics",
+        // protocol: "https",
+        // hostname: "www.rahul-guha.com",
       },
     },
     {
