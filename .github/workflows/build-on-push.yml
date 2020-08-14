@@ -2,15 +2,20 @@ name: Build & Deploy to Production
 
 # Run when a dispatch event is created (e.g. from a CMS Webhook)
 # See https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
-on: [repository_dispatch]
+on: 
+  repository_dispatch: 
+  types: [publish-event]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1 # Equivalent to `git checkout master`
+        - uses: actions/checkout@v1 # Equivalent to `git checkout master`
     
-    - name: Install dependencies
-      run: npm run deploy
-  
+        - name: Setup Node
+          uses: actions/setup-node@v1
+          with:
+              node-version: '12.x'
+
+        - name: Install dependencies
+          run: npm run deploy
