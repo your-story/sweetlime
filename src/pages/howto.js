@@ -1,49 +1,45 @@
 import React from "react"
 import Layout from "../components/layout"
 import Head from "../components/head"
-import HowtStyle from './howto.module.scss'
-const howtoPage = () => {
+import {graphql, useStaticQuery} from "gatsby"
+// import HowtStyle from './howto.module.scss'
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
+
+const HowtoPage = () =>{
+    const data = useStaticQuery(graphql`
+    query {
+        contentfulHowitworks{
+
+             body{json}
+        }
+        
+    }
+    
+    `)
+// const howtoPage = () => {
+//     const data = useStaticQuery(graphql`
+//     query {
+        
+//         contentfulHowitworks{
+//              body {json}
+//             }
+//         }
+        
+    
+    
+//     `)
+
     return (
         <div>
+        
             <Layout>
-            <Head title="Howto" />
-            <div className={HowtStyle.title}> Steps:</div>
-            <ul>
-                <li>
-                    <div className={HowtStyle.navItem}>
-                        <b>Digitize:</b> 
-                            <ul>
-                                <li>
-                                    Mobile Phone:
-                                </li> 
-                                <li>
-                                    Scan:
-                                </li> 
-
-                            </ul>
-                    </div>
-                </li>    
-                <li>
-                    <div className={HowtStyle.navItem}>
-                        <b>Restore:</b> 
-                            <ul>
-                                <li>
-                                    Estimate:
-                                </li> 
-                                <li>
-                                    Proof:
-                                </li> 
-                                <li>
-                                    Deliver:
-                                </li> 
-                            </ul>
-                    </div>
-                </li>             
-            </ul>
-            
+            <Head title="Home" />
+            <dr>
+            {documentToReactComponents(data.contentfulHowitworks.body.json)}
+            </dr>
             </Layout>
         </div>
     )
 }
-export default howtoPage
+export default HowtoPage
 
