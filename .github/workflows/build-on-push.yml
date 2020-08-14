@@ -22,5 +22,5 @@ jobs:
         - name: Deploy
           run: npm run deploy
           env: 
-            CONTENTFUL_SPACE_ID: "i4saea19036k"
-            CONTENTFUL_ACCESS_KEY: "8wse3Ujh3ArWjuOTMLeWW2dXS5eSJn_Agjl2JEk6Ftc"
+            CONTENTFUL_SPACE_ID: ${{secrets.CONTENTFUL_SPACE_ID}}
+            CONTENTFUL_ACCESS_KEY: ${{CONTENTFUL_ACCESS_KEY}}
